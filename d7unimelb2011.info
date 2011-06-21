@@ -1,0 +1,15 @@
+; $Id: d7unimelb2011.info,v 1.0 2011/06/22 00:00:00 media insights Exp $
+name = D7 Unimelb 2011
+description = D7 theme for University of Melbourne 2011 Web Templates
+package = Core
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = style.css
+
+regions[homepage1]     	= Homepage1
+regions[homepage2]     	= Homepage2
+regions[dropdown]     	= Dropdown
+regions[help]           = Help
+regions[content]        = Content
+regions[navigation]     = Navigation
+regions[aside]  		= Aside
