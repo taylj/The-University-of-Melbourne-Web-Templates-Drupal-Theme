@@ -189,7 +189,7 @@
 
       <ul class="col-2">
         <li><strong>Authoriser:</strong>
-          <br>Communcations Manager</li>
+          <br>Communications Manager</li>
         <li><strong>Maintainer:</strong><br>
           Pat Doe, Faculty of Bar</li>
       </ul>
