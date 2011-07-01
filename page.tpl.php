@@ -257,7 +257,7 @@
 
       <ul class="col-2">
         <li><strong>Authoriser:</strong>
-          <br>Communcations Manager</li>
+          <br><?php print $communications_manager; ?></li>
         <li><strong>Maintainer:</strong><br>
           Pat Doe, Faculty of Bar</li>
       </ul>
