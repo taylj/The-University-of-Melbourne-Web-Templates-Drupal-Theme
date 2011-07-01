@@ -78,7 +78,75 @@
  * @see bartik_process_page()
  */
 
-?>  
+?><!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+<!-- start Drupal head -->
+
+<?php print $head; ?>
+
+<title><?php print $head_title; ?></title>
+
+<?php print $styles; ?>
+
+<?php print $scripts; ?>
+
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- end Drupal head -->
+
+<!-- start Unimelb head -->
+
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Content Template - WBG Templates</title>  
+  <!-- SEO relevant meta data to describe content of page -->
+      <meta name="DC.Title" content="">
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="DC.Description" content="">
+    <!-- End SEO relevant meta data -->
+    <!-- Authoriser and maintainer related meta data - developers, don't forget humans.txt   -->
+      <meta name="DC.Creator" content="The University of Melbourne">
+      <meta name="DC.Contributor" content="">
+      <meta name="author" content="">
+      <meta name="UM.Authoriser.Name" content="">
+      <meta name="UM.Authoriser.Title" content="">
+      <meta name="UM.Maintainer.Name" content="">
+      <meta name="UM.Maintainer.Department" content="">
+      <meta name="UM.Maintainer.Email" content="">
+    <!-- End authoriser and maintainer meta data -->
+    <!-- Static meta data   -->
+      <meta name="DC.Rights" content="http://www.unimelb.edu.au/disclaimer">
+      <meta name="DC.Publisher" content="The University of Melbourne">
+      <meta name="DC.Format" content="text/html">
+      <meta name="DC.Language" content="en">
+      <meta name="DC.Identifier" content="http://www.unimelb.edu.au/">
+    <!-- End static meta data -->
+    <!-- Meta data to be autofilled -->
+      <meta name="DC.Date" content="">
+      <meta name="DC.Date.Modified" content="">
+  <!-- End meta data to be autofilled -->
+    <meta content="width=device-width; initial-scale=0.67;" name="viewport">
+
+    <!-- GLOBAL RESOURCES -->
+    <!-- DO NOT CHANGE -->  
+      <link rel="stylesheet" href="http://brand.unimelb.edu.au/web-templates/EDGE/css/complete.css">  
+      <script src="http://brand.unimelb.edu.au/web-templates/EDGE/js/complete.js"></script>
+      <script src="http://brand.unimelb.edu.au/global-header/js/injection.js"></script>
+    <!-- /GLOBAL RESOURCES -->
+    <link rel="stylesheet" href="/sites/all/themes/d7unimelb2011/css/custom.css" media="screen">
+
+<!-- end Unimelb head -->
+
+</head>
+
+<body class="<?php if($is_front) { print 'headingblock no-logo home'; } else { print 'no-logo blue'; } ?> <?php print $classes; ?>"<?php if($attributes) { print ' ' . $attributes; } ?>>
+  <?php print $page_top; ?>
+
 
 <div class="wrapper">
 
@@ -104,58 +172,58 @@
 
 	<?php if ($page['dropdown']): ?>
 	<div class="col-8 dropdown">
-		<?php print render($page['dropdown']); ?>
+		<?php print $dropdown; ?>
 	</div><!-- end dropdown -->
 	<?php endif; ?>
 
-	<?php if ($is_front && $page['homepage1']): ?>
+	<?php if ($is_front && $homepage1): ?>
 	<div id="newsbanner">
-		<?php print render($page['homepage1']); ?>
+		<?php print $homepage1; ?>
     </div><!-- end homepage1 -->
 	<?php endif; ?>
 
 	<?php if ($is_front && $page['homepage2']): ?>
 	<div id="main-content" class="main col-6" role="main">
-		<?php print render($page['homepage2']); ?>
+		<?php print $page['homepage2']; ?>
     </div><!-- end homepage2 -->
 	<?php endif; ?>
 
-	<?php if(!$is_front && $page['content']) { ?>
+	<?php if(!$is_front && $content) { ?>
 
 	<div class="main col-6" id="main-content" role="main">
 		<!-- <?php print $breadcrumb; ?> -->
-		<?php print render($title_prefix); ?>
+		<?php print $title_prefix; ?>
 		<?php if ($title): ?>
 			<h1 class="title" id="page-title"><?php print $title; ?></h1>
 		<?php endif; ?>
-		<?php print render($title_suffix); ?>
+		<?php print $title_suffix; ?>
 		<?php print $messages; ?>
-		<?php if ($tabs = render($tabs)): ?>
+		<?php if ($tabs): ?>
 			<div class="tabs"><?php print $tabs; ?></div>
 		<?php endif; ?>
-		<?php print render($page['help']); ?>
+		<?php print $page['help']; ?>
 		<?php if ($action_links): ?>
-			<ul class="action-links"><?php print render($action_links); ?></ul>
+			<ul class="action-links"><?php print $action_links; ?></ul>
 		<?php endif; ?>
-		<?php print render($page['content']); ?>
+		<?php print $content; ?>
 		<?php print $feed_icons; ?>
 	</div><!-- end main -->
 
 	<?php } ?>
 
-	<?php if($page['content']) { ?>
+	<?php if($content) { ?>
 
 	<div class="<?php if($is_front) { print 'aside '; } ?>col-2">
 
 	<?php if (!$is_front && $page['navigation']): ?>
 	<div class="nav first" role="navigation">
-		<?php print render($page['navigation']); ?>
+		<?php print $navigation; ?>
 	</div><!-- end navigation -->
 	<?php endif; ?>
 
 	<?php if ($page['aside']): ?>
 	<?php if(!$is_front) { print '<div class="aside" role="complementary">'; } ?>
-		<?php print render($page['aside']); ?>
+		<?php print $page['aside']; ?>
 	<?php if(!$is_front) { print '</div><!-- end aside -->'; } ?>
 	<?php endif; ?>
 
@@ -197,3 +265,7 @@
       <hr>
     </div>
   </div><!-- end footer -->
+
+  <?php print $page_bottom; ?>
+</body>
+</html>

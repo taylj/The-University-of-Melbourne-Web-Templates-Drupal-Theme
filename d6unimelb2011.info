@@ -1,8 +1,7 @@
-; $Id: d7unimelb2011.info,v 1.0 2011/06/22 00:00:00 media insights Exp $
-name = D7 Unimelb 2011
-description = D7 theme for University of Melbourne 2011 Web Templates
+name = D6 Unimelb 2011
+description = D6 theme for University of Melbourne 2011 Web Templates
 package = Core
-core = 7.x
+core = 6.x
 engine = phptemplate
 stylesheets[all][] = style.css
 
