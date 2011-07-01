@@ -166,11 +166,11 @@
 		</div><!-- end headingtext -->
 		<?php endif; ?>
 
-        <?php if(!$is_front && $page['content']) { print '<hr>'; } ?>
+        <?php if(!$is_front && $content) { print '<hr>'; } ?>
 
 	</div><!-- end header -->
 
-	<?php if ($page['dropdown']): ?>
+	<?php if ($dropdown): ?>
 	<div class="col-8 dropdown">
 		<?php print $dropdown; ?>
 	</div><!-- end dropdown -->
@@ -182,9 +182,9 @@
     </div><!-- end homepage1 -->
 	<?php endif; ?>
 
-	<?php if ($is_front && $page['homepage2']): ?>
+	<?php if ($is_front && $homepage2): ?>
 	<div id="main-content" class="main col-6" role="main">
-		<?php print $page['homepage2']; ?>
+		<?php print $homepage2; ?>
     </div><!-- end homepage2 -->
 	<?php endif; ?>
 
@@ -201,7 +201,7 @@
 		<?php if ($tabs): ?>
 			<div class="tabs"><?php print $tabs; ?></div>
 		<?php endif; ?>
-		<?php print $page['help']; ?>
+		<?php print $help; ?>
 		<?php if ($action_links): ?>
 			<ul class="action-links"><?php print $action_links; ?></ul>
 		<?php endif; ?>
@@ -215,15 +215,15 @@
 
 	<div class="<?php if($is_front) { print 'aside '; } ?>col-2">
 
-	<?php if (!$is_front && $page['navigation']): ?>
+	<?php if (!$is_front && $navigation): ?>
 	<div class="nav first" role="navigation">
 		<?php print $navigation; ?>
 	</div><!-- end navigation -->
 	<?php endif; ?>
 
-	<?php if ($page['aside']): ?>
+	<?php if ($aside): ?>
 	<?php if(!$is_front) { print '<div class="aside" role="complementary">'; } ?>
-		<?php print $page['aside']; ?>
+		<?php print $aside; ?>
 	<?php if(!$is_front) { print '</div><!-- end aside -->'; } ?>
 	<?php endif; ?>
 
@@ -267,5 +267,6 @@
   </div><!-- end footer -->
 
   <?php print $page_bottom; ?>
+  <?php print $closure ?>
 </body>
 </html>
